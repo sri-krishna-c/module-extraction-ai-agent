@@ -1,100 +1,46 @@
-Module Extraction AI Agent
-Overview
+# Module Extraction AI Agent
 
-The Module Extraction AI Agent is an AI-powered system designed to extract structured modules and submodules from documentation-based help websites.
-It converts unstructured documentation into a clean, deduplicated, and stakeholder-ready JSON format, enabling clear product understanding and analysis.
+## Description
+This project is an AI-powered system that extracts structured modules and submodules from documentation-based help websites. It converts unstructured documentation content into a clean, deduplicated JSON format that can be used by product and engineering teams.
 
-This project combines semantic extraction using Large Language Models (LLMs) with deterministic post-processing to ensure accuracy, consistency, and scalability.
+The system combines semantic extraction using a local Large Language Model (LLM) with deterministic post-processing to ensure consistency and accuracy.
 
-Objectives
+## Features
+- Crawls documentation URLs
+- Cleans and normalizes HTML content
+- Extracts product modules and submodules using AI
+- Deduplicates overlapping topics
+- Outputs structured JSON
+- Includes a Streamlit-based demo UI
+- Runs fully locally without API keys
 
-Crawl and process documentation URLs
+## Tech Stack
+- Python 3.10
+- LangChain
+- Ollama (LLaMA 3)
+- Requests
+- BeautifulSoup
+- Streamlit
+- Git and GitHub
 
-Extract high-level product modules and submodules
-
-Deduplicate and normalize overlapping topics
-
-Generate structured JSON output
-
-Provide an interactive demonstration interface
-
-Key Features
-
-Automated documentation crawling
-
-HTML content cleaning and normalization
-
-Semantic module extraction using a local LLM (Ollama – LLaMA 3)
-
-Deduplication and topic consolidation
-
-Structured, readable JSON output
-
-Streamlit-based interactive UI
-
-Fully local execution (no external API keys required)
-
-Technology Stack
-
-Programming Language : Python 3.10
-
-AI / NLP : LangChain, Ollama (LLaMA 3)
-
-Web Scraping : Requests, BeautifulSoup
-
-User Interface : Streamlit
-
-Version Control : Git, GitHub
-
-Project Structure
+## Project Structure
 module_extractor/
-│
 ├── ai/
-│   ├── module_extractor.py
-│   ├── postprocess.py
-│   └── final_formatter.py
-│
 ├── crawler/
-│   ├── fetcher.py
-│   └── parser.py
-│
 ├── output/
-│   └── modules.json
-│
 ├── app.py
 ├── test_ai.py
 ├── test_parser.py
 ├── .gitignore
 └── README.md
 
-Installation and Setup
-Step 1: Clone the Repository
-git clone https://github.com/sri-krishna-c/module-extraction-ai-agent.git
-cd module-extraction-ai-agent
-
-Step 2: Create and Activate Virtual Environment
+## How to Run
 python -m venv env
 .\env\Scripts\Activate.ps1
-
-Step 3: Install Dependencies
 pip install -r requirements.txt
-
-Step 4: Run the Application
 streamlit run app.py
 
-Usage
-
-Launch the Streamlit application
-
-Enter a documentation URL (e.g., WordPress documentation)
-
-Click Extract Modules
-
-View extracted modules and submodules in JSON format
-
-Output is automatically saved to output/modules.json
-
-Sample Output
+## Sample Output
 [
   {
     "module": "Technical Guides",
@@ -107,34 +53,12 @@ Sample Output
   }
 ]
 
-Design Approach
+## Design Notes
+- Uses LLM-based semantic understanding for accurate extraction
+- Applies deterministic logic for deduplication
+- Produces a flat, product-level module structure
+- Designed to be simple, scalable, and interview-ready
 
-LLM-based semantic extraction for contextual understanding
-
-Deterministic post-processing for consistency and deduplication
-
-Flat, normalized structure aligned with product-level expectations
-
-Local LLM execution to eliminate API cost and dependency
-
-Limitations
-
-JavaScript-heavy documentation sites may require headless browsers
-
-Output quality depends on the structure and clarity of documentation
-
-Future Enhancements
-
-Confidence scoring for extracted modules
-
-Multi-URL batch processing
-
-REST API support
-
-Dockerized deployment
-
-Support for additional documentation formats
-
-Project Summary
-
-This project demonstrates how unstructured documentation can be transformed into structured product intelligence using AI-based semantic extraction combined with deterministic engineering practices.
+## Author
+Sri Krishna  
+GitHub: https://github.com/sri-krishna-c
