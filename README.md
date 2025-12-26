@@ -24,6 +24,7 @@ The system combines semantic extraction using a local Large Language Model (LLM)
 - Git and GitHub
 
 ## Project Structure
+```text
 module_extractor/
 ├── ai/
 ├── crawler/
@@ -33,14 +34,18 @@ module_extractor/
 ├── test_parser.py
 ├── .gitignore
 └── README.md
+```
 
 ## How to Run
+```bash
 python -m venv env
 .\env\Scripts\Activate.ps1
 pip install -r requirements.txt
 streamlit run app.py
+```
 
 ## Sample Output
+```json
 [
   {
     "module": "Technical Guides",
@@ -52,6 +57,7 @@ streamlit run app.py
     }
   }
 ]
+```
 
 ## Design Notes
 - Uses LLM-based semantic understanding for accurate extraction
